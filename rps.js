@@ -30,7 +30,7 @@ function validChoice(op){
     
     else
         do{
-        op = parseInt(prompt(`\t\tERROR!\nCHOOSE:\n\n1- ROCK\n2- PAPER\n3- SCISSORS\n`))
+        op = parseInt(prompt(`\t\tERROR!\nCHOOSE:\n\n1- ROCK\n2- PAPER\n3- SCISSORS\n\n 0- QUIT GAME`))
         } while (op !== 1 && op !== 2 && op !== 3 && op !== 0)    
         return op
 
@@ -47,7 +47,7 @@ function getHumanChoice (){
         return 2
     else if (x === 3)
         return 3
-    else
+    else if (x === 0)
         return 0
 }
 
@@ -97,12 +97,13 @@ function playRound(){
 
 function playGame(){
     let i = 1
-    
+    let score
     do{
+
         alert(`ROUND ${i}\nMATCH ${humanScore} - ${computerScore}`)
         
-        let score = playRound()
-     
+        score = playRound()
+        
         switch (score) {
             case -2:
                 break;
@@ -113,43 +114,21 @@ function playGame(){
                 break;
             case 1:
                 humanScore++;
-                break;}
+                break;
+        }
+        i++;
+        
+        
+    } while (i<=5  && score !== -2)
 
-        i++
-    } while (score !== -2 && i <= 5)
                 
     if(humanScore>computerScore)
         alert(`YOU WON! CONGRATULATIONS!\nGAME ${humanScore} - ${computerScore}`)
     else if (humanScore<computerScore)
         alert(`YOU LOSE! TRY NEXT TIME!\nGAME ${humanScore} - ${computerScore}`)
-    else
+    else 
         alert(`YOU TIE! TRY NEXT TIME!\nGAME ${humanScore} - ${computerScore}`)        
 
-
-
-    // for (let i = 1; i <= 5; i++) {
-    //     alert(`ROUND ${i}\nMATCH ${humanScore} - ${computerScore}`)
-        
-    //     let score = playRound()
-     
-    //     switch (score) {
-    //         case -1:
-    //             break;
-    //         case 0:
-    //             computerScore++;
-    //             break;
-    //         case 1:
-    //             humanScore++;
-    //             break;}
-    // }
-
-    // if(humanScore>computerScore)
-    //     alert(`YOU WON! CONGRATULATIONS!\nGAME ${humanScore} - ${computerScore}`)
-    // else if (humanScore<computerScore)
-    //     alert(`YOU LOSE! TRY NEXT TIME!\nGAME ${humanScore} - ${computerScore}`)
-    // else
-    //     alert(`YOU TIE! TRY NEXT TIME!\nGAME ${humanScore} - ${computerScore}`)
 }
 
 playGame()
-

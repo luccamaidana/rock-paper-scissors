@@ -6,7 +6,12 @@
     <title>Rock Paper Scissors</title>
     <script type="text/javascript" src="rps.js" defer></script>
     <style>
+        h1{
+            box-sizing: content-box;
+            height: 50px;
+        }
         body {
+            margin: 0;
             color: white;
             background-color: black;
             text-align: center;
@@ -40,20 +45,37 @@
             background-color: #262725;
         }
 
+        #match {
+            margin: 10px 0;
+            font-size: 25px;
+        }
+
+        #computer {
+            font-size: 50px;
+        }
+
+        #winner {
+            font-size: 70px;
+        }
+
     </style>
 </head>
 <body>
     <h1>Rock Paper Scissors</h1>
+
+    <div id="match"></div>
+
+    <div id="computer"></div>
+
+    <div id="round"></div>
+
+    <div id="winner"></div>
 
     <ul id="options">
         <li><button id="rock">🪨</button></li>
         <li><button id="paper">📜</button></li>
         <li><button id="scissors">✂️</button></li>
     </ul>
-    
-    
-    
-    
 
     <p>Enjoy the game!</p>
 </body>

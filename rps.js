@@ -36,6 +36,8 @@ const playerSelection = () => {
         match.textContent = `ROUND ${i}\r\nMATCH ${humanScore} - ${computerScore}`
         if(i===5){
             i = 0
+            humanScore = 0
+            computerScore = 0
             winner.textContent += `\r\n PLAY AGAIN?`
         }
         return win

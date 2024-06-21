@@ -4,10 +4,12 @@
 //variables
 let humanScore = 0
 let computerScore = 0
+let i = 0
 
 //querySelectors
 let options = document.querySelector("#options")
 let match = document.querySelector("#match")
+match.setAttribute("style","white-space: pre;")
 let computer = document.querySelector("#computer")
 let winner = document.querySelector("#winner")
 winner.setAttribute("style","white-space: pre;")
@@ -27,11 +29,20 @@ const playerSelection = () => {
             case "scissors":
                 win = playRound(3)
                 break;  
+        
+            }
+        points(win) 
+        i++;
+        match.textContent = `ROUND ${i}\r\nMATCH ${humanScore} - ${computerScore}`
+        if(i===5){
+            i = 0
+            winner.textContent += `\r\n PLAY AGAIN?`
         }
         return win
     })
 }
 
+playerSelection()
 
 function getComputerChoice(){
     let x = Math.random()
@@ -122,6 +133,21 @@ function playRound(p){
     
 }
 
+let points = (score) => {
+    
+    switch (score) {
+        case -2:
+            break;
+        case -1:
+            break;
+        case 0:
+            computerScore++;
+            break;
+        case 1:
+            humanScore++;
+            break;  
+    }
+}
 
 function playGame(){
     let i = 1
@@ -159,4 +185,4 @@ function playGame(){
 
 }
 
-playGame() 
+/* playGame()  */

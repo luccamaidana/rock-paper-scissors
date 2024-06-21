@@ -5,6 +5,29 @@
 let humanScore = 0
 let computerScore = 0
 
+//querySelectors
+let options = document.querySelector("#options")
+
+
+const playerSelection = () => {
+    options.addEventListener ("click", (event) =>{
+        let target = event.target
+
+        switch (target.id) {
+            case "rock":
+                playRound(1)
+                break;
+            case "paper":
+                playRound(2)
+                break;
+            case "scissors":
+                playRound(3)
+                break;  
+        }
+    })
+}
+
+playerSelection()
 
 function getComputerChoice(){
     let x = Math.random()
@@ -80,20 +103,22 @@ function whoWon(h,c){
     return ww
 }
 
-function playRound(){
-    alert("ROCK")
+function playRound(p){
+    /* alert("ROCK")
     alert("PAPER")
-    alert("SCISSORS")
+    alert("SCISSORS") */
     
-    let h = getHumanChoice()
+    /* let h = getHumanChoice()
     if(h===0)
         return -2
-    else {
+    else { */
         let c = getComputerChoice()
-        let win = whoWon(h,c)
+        let win = whoWon(p,c)
         return win
-    }
+    
 }
+
+
 
 function playGame(){
     let i = 1
@@ -131,4 +156,4 @@ function playGame(){
 
 }
 
-playGame()
+/* playGame() */

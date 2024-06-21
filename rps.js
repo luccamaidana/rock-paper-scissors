@@ -78,28 +78,28 @@ function getHumanChoice (){
 
 function whoWon(h,c){
     if (h === c){
-        alert("YOU TIE!\nGOOD GAME!")
+        winner.textContent = "YOU TIE!\nGOOD GAME!"
         ww = -1}
 
     else if (h === 1 && c === 2){
-        alert("YOU LOSE!\nPAPER BEATS ROCK!")
+        winner.textContent = "YOU LOSE!\nPAPER BEATS ROCK!"
         ww = 0}
     else if (h === 1 && c === 3){
-        alert("YOU WON!\nROCK BEATS SCISSORS!")
+        winner.textContent = "YOU WON!\nROCK BEATS SCISSORS!"
         ww = 1}
 
     else if (h === 2 && c === 3){
-        alert("YOU LOSE!\nSCISSORS BEATS PAPER!")
+        winner.textContent = "YOU LOSE!\nSCISSORS BEATS PAPER!"
         ww = 0}
     else if (h === 2 && c === 1){
-        alert("YOU WON!\nPAPER BEATS ROCK!")
+        winner.textContent = "YOU WON!\nPAPER BEATS ROCK!"
         ww = 1}
 
     else if (h === 3 && c === 1){
-        alert("YOU LOSE!\nROCK BEATS SCISSORS!")
+        winner.textContent = "YOU LOSE!\nROCK BEATS SCISSORS!"
         ww = 0}
     else if (h === 3 && c === 2){
-        alert("YOU WON!\nSCISSORS BEATS PAPER!")
+        winner.textContent = "YOU WON!\nSCISSORS BEATS PAPER!"
         ww = 1} 
     
     return ww

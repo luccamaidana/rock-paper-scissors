@@ -95,7 +95,25 @@ function playRound(){
     }
 }
 
-function playGame(){
+let list = document.querySelector("#options")
+
+list.addEventListener("click", (event)=>{
+    let target = event.target
+
+    switch(target.id){
+        case "rock":
+            playRound()
+            break;
+        case "paper":
+            playRound()
+            break;
+        case "scissors":
+            break;
+
+    }
+})
+
+/* function playGame(){
     let i = 1
     let score
     do{
@@ -131,4 +149,4 @@ function playGame(){
 
 }
 
-playGame()
+playGame() */

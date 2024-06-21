@@ -10,6 +10,8 @@ let options = document.querySelector("#options")
 let match = document.querySelector("#match")
 let computer = document.querySelector("#computer")
 let winner = document.querySelector("#winner")
+winner.setAttribute("style","white-space: pre;")
+
 
 const playerSelection = () => {
     options.addEventListener ("click", (event) =>{
@@ -17,19 +19,19 @@ const playerSelection = () => {
 
         switch (target.id) {
             case "rock":
-                playRound(1)
+                win = playRound(1)
                 break;
             case "paper":
-                playRound(2)
+                win = playRound(2)
                 break;
             case "scissors":
-                playRound(3)
+                win = playRound(3)
                 break;  
         }
+        return win
     })
 }
 
-playerSelection()
 
 function getComputerChoice(){
     let x = Math.random()
@@ -55,7 +57,7 @@ function validChoice(op){
     
     else
         do{
-        op = parseInt(prompt(`\t\tERROR!\nCHOOSE:\n\n1- ROCK\n2- PAPER\n3- SCISSORS\n\n 0- QUIT GAME`))
+        op = parseInt(prompt(`\t\tERROR!\r\nCHOOSE:\r\n\r\n1- 🪨\r\n2- PAPER\r\n3- ✂️\r\n\r\n 0- QUIT GAME`))
         } while (op !== 1 && op !== 2 && op !== 3 && op !== 0)    
         return op
 
@@ -63,7 +65,7 @@ function validChoice(op){
 
 function getHumanChoice (){
 
-    let x = parseInt(prompt(`CHOOSE:\n\n1- ROCK\n2- PAPER\n3- SCISSORS\n\n 0- QUIT GAME`))
+    let x = parseInt(prompt(`CHOOSE:\r\n\r\n1- 🪨\r\n2- PAPER\r\n3- ✂️\r\n\r\n 0- QUIT GAME`))
     x = validChoice(x)
 
     if(x === 1)
@@ -78,37 +80,37 @@ function getHumanChoice (){
 
 function whoWon(h,c){
     if (h === c){
-        winner.textContent = "YOU TIE!\nGOOD GAME!"
+        winner.textContent = "YOU TIE!\r\nGOOD GAME!"
         ww = -1}
 
     else if (h === 1 && c === 2){
-        winner.textContent = "YOU LOSE!\nPAPER BEATS ROCK!"
+        winner.textContent = "YOU LOSE!\r\n📜 BEATS 🪨!"
         ww = 0}
     else if (h === 1 && c === 3){
-        winner.textContent = "YOU WON!\nROCK BEATS SCISSORS!"
+        winner.textContent = "YOU WON!\r\n🪨 BEATS ✂️!"
         ww = 1}
 
     else if (h === 2 && c === 3){
-        winner.textContent = "YOU LOSE!\nSCISSORS BEATS PAPER!"
+        winner.textContent = "YOU LOSE!\r\n✂️ BEATS 📜!"
         ww = 0}
     else if (h === 2 && c === 1){
-        winner.textContent = "YOU WON!\nPAPER BEATS ROCK!"
+        winner.textContent = "YOU WON!\r\n📜 BEATS 🪨!"
         ww = 1}
 
     else if (h === 3 && c === 1){
-        winner.textContent = "YOU LOSE!\nROCK BEATS SCISSORS!"
+        winner.textContent = "YOU LOSE!\r\n🪨 BEATS ✂️!"
         ww = 0}
     else if (h === 3 && c === 2){
-        winner.textContent = "YOU WON!\nSCISSORS BEATS PAPER!"
+        winner.textContent = "YOU WON!\r\n✂️ BEATS 📜!"
         ww = 1} 
     
     return ww
 }
 
 function playRound(p){
-    /* alert("ROCK")
+    /* alert("🪨")
     alert("PAPER")
-    alert("SCISSORS") */
+    alert("✂️") */
     
     /* let h = getHumanChoice()
     if(h===0)
@@ -121,15 +123,14 @@ function playRound(p){
 }
 
 
-
 function playGame(){
     let i = 1
     let score
     do{
 
-        alert(`ROUND ${i}\nMATCH ${humanScore} - ${computerScore}`)
+        alert(`ROUND ${i}\r\nMATCH ${humanScore} - ${computerScore}`)
         
-        score = playRound()
+        score = playerSelection()
         
         switch (score) {
             case -2:
@@ -150,12 +151,12 @@ function playGame(){
 
                 
     if(humanScore>computerScore)
-        alert(`YOU WON! CONGRATULATIONS!\nGAME ${humanScore} - ${computerScore}`)
+        alert(`YOU WON! CONGRATULATIONS!\r\nGAME ${humanScore} - ${computerScore}`)
     else if (humanScore<computerScore)
-        alert(`YOU LOSE! TRY NEXT TIME!\nGAME ${humanScore} - ${computerScore}`)
+        alert(`YOU LOSE! TRY NEXT TIME!\r\nGAME ${humanScore} - ${computerScore}`)
     else 
-        alert(`YOU TIE! TRY NEXT TIME!\nGAME ${humanScore} - ${computerScore}`)        
+        alert(`YOU TIE! TRY NEXT TIME!\r\nGAME ${humanScore} - ${computerScore}`)        
 
 }
 
-/* playGame() */
+playGame() 

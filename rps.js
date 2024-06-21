@@ -7,7 +7,9 @@ let computerScore = 0
 
 //querySelectors
 let options = document.querySelector("#options")
-
+let match = document.querySelector("#match")
+let computer = document.querySelector("#computer")
+let winner = document.querySelector("#winner")
 
 const playerSelection = () => {
     options.addEventListener ("click", (event) =>{
@@ -33,15 +35,15 @@ function getComputerChoice(){
     let x = Math.random()
 
     if (x<=0.3){
-        alert("COMPUTER CHOSE:\nROCK") 
+        computer.textContent = "COMPUTER CHOSE: 🪨"
         return 1
     }
     else if(x>0.3 && x<0.6){
-        alert("COMPUTER CHOSE:\nPAPER") 
+        computer.textContent = "COMPUTER CHOSE: 📜"
         return 2
     }
     else if(x>=0.6 && x<=1){
-        alert("COMPUTER CHOSE:\nSCISSORS") 
+        computer.textContent = "COMPUTER CHOSE: ✂️"
         return 3
     }
 

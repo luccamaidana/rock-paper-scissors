@@ -35,10 +35,20 @@ const playerSelection = () => {
         i++;
         match.textContent = `ROUND ${i}\r\nMATCH ${humanScore} - ${computerScore}`
         if(i===5){
+            winner.textContent = ""
+
+            if(humanScore>computerScore)
+                winner.textContent += `YOU WON! CONGRATULATIONS!\r\nGAME ${humanScore} - ${computerScore}`
+            else if (humanScore<computerScore)
+                winner.textContent += `YOU LOSE! TRY NEXT TIME!\r\nGAME ${humanScore} - ${computerScore}`
+            else 
+                winner.textContent += `IT'S A TIE! TRY NEXT TIME!\r\nGAME ${humanScore} - ${computerScore}`  
+
+            winner.textContent += `\r\n PLAY AGAIN?`
+
             i = 0
             humanScore = 0
             computerScore = 0
-            winner.textContent += `\r\n PLAY AGAIN?`
         }
         return win
     })

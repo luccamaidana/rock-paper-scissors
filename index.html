@@ -45,14 +45,20 @@
             background-color: #262725;
         }
 
+        #mc {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 37.8em;
+            margin: 0 50px 0 0;
+        }
+
         #match {
             text-align: end;
-            margin: 10px 50px;
             font-size: 25px;
         }
 
         #computer {
-            height: 35px;
             font-size: 30px;
         }
 
@@ -65,9 +71,10 @@
 <body>
     <h1>Rock Paper Scissors</h1>
 
-    <div id="match"></div>
-
-    <div id="computer"></div>
+    <div id="mc">
+        <div id="computer"></div>
+        <div id="match"></div>
+    </div>
 
     <div id="round"></div>
 

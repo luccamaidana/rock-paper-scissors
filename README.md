@@ -3,7 +3,7 @@
 ## My first JS project
 
 WebPage
-<a href="[URL](https://luccamaidana.github.io/rock-paper-scissors/)" target="_blank">luccamaidana.github.io/rock-paper-scissors/</a>
+<a href="(https://luccamaidana.github.io/rock-paper-scissors/)" target="_blank">luccamaidana.github.io/rock-paper-scissors/</a>
 
 
 + Play the clasic Rock Paper Scissors game
